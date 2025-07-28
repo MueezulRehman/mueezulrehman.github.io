@@ -1,90 +1,169 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mueez Ul Rehman | Full-Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Mueez Ul Rehman – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
     }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
-      padding: 2rem;
+      background-color: #0f172a;
+      color: #f1f5f9;
     }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      padding: 2rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border-radius: 12px;
+    header {
+      padding: 20px 40px;
+      background: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
-    h1 {
-      font-size: 2.5rem;
-      color: #2c3e50;
+    header h1 {
+      font-size: 28px;
+      color: #38bdf8;
+    }
+    nav a {
+      margin-left: 20px;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+    section {
+      padding: 60px 40px;
     }
     h2 {
-      font-size: 1.5rem;
-      color: #3498db;
-      margin-top: 2rem;
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #38bdf8;
     }
-    p {
-      margin: 1rem 0;
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
-    .projects a {
-      display: inline-block;
-      color: #2980b9;
-      text-decoration: none;
-      margin-top: 0.5rem;
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
-    .projects a:hover {
-      text-decoration: underline;
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .card h3 {
+      margin: 15px 0 5px;
+      font-size: 20px;
+      color: #f8fafc;
+    }
+    .card p {
+      font-size: 14px;
+      color: #94a3b8;
+    }
+    form {
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input, textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #334155;
+      color: white;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #94a3b8;
+    }
+    button {
+      background: #38bdf8;
+      color: black;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
     }
     footer {
       text-align: center;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-      color: #888;
+      padding: 20px;
+      background: #1e293b;
+      color: #94a3b8;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+
+  <header>
     <h1>Mueez Ul Rehman</h1>
-    <p>21-year-old self-taught full-stack web developer from Pakistan with 1+ year of hands-on experience in:</p>
-    <ul>
-      <li>PHP & Laravel (Backend)</li>
-      <li>JavaScript, HTML, CSS (Frontend)</li>
-      <li>MySQL (Database)</li>
-      <li>Basic knowledge of Java</li>
-    </ul>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <h2>🛠️ Projects</h2>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a 21-year-old full-stack web developer from Pakistan with 1+ year of experience building modern apps with PHP, Laravel, JavaScript, MySQL, HTML, and CSS. I also studied Java for 9 months. I'm self-taught, passionate, and always learning. My goal is to work with international teams and build meaningful software.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
     <div class="projects">
-      <p>Here are a few of my recent projects:</p>
-      <a href="https://github.com/mueezulrehman/your-project-1" target="_blank">• Project 1 – Admin Dashboard in Laravel</a><br>
-      <a href="https://github.com/mueezulrehman/your-project-2" target="_blank">• Project 2 – School Attendance System</a><br>
-      <a href="https://github.com/mueezulrehman/your-project-3" target="_blank">• Project 3 – Student Registration Import/Export</a>
+      <div class="card">
+        <img src="https://placehold.co/400x200/38bdf8/fff?text=School+Management" alt="School Project" />
+        <h3>School Management System</h3>
+        <p>Laravel-based project for managing student records, attendance, fees and reports.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/400x200/38bdf8/fff?text=E-commerce" alt="E-commerce" />
+        <h3>Mini E-commerce</h3>
+        <p>A simple PHP + MySQL online shop with cart, login, and admin dashboard.</p>
+      </div>
+      <div class="card">
+        <img src="https://placehold.co/400x200/38bdf8/fff?text=Portfolio" alt="Portfolio" />
+        <h3>Developer Portfolio</h3>
+        <p>This portfolio itself – built with HTML, CSS, and pure love for clean design.</p>
+      </div>
     </div>
+  </section>
 
-    <h2>🌍 About Me</h2>
-    <p>I started learning development by doing real-world projects and working professionally on Laravel-based applications. I'm passionate about clean code, learning new technologies, and building scalable web solutions. Currently seeking full-time or remote opportunities worldwide.</p>
-
-    <h2>📫 Contact</h2>
-    <p>Email: <a href="mailto:mueez12m@gmail.com">mueez12m@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/mueezulrehman" target="_blank">github.com/mueezulrehman</a></p>
-  </div>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="sendEmail(); return false;">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    &copy; 2025 Mueez Ul Rehman. All rights reserved.
+    <p>© 2025 Mueez Ul Rehman — All Rights Reserved</p>
   </footer>
+
+  <!-- Optional: EmailJS Setup -->
+  <script>
+    function sendEmail() {
+      alert("This form needs EmailJS setup to work.");
+      // You can integrate with EmailJS or Formspree here later
+    }
+  </script>
+
 </body>
 </html>
