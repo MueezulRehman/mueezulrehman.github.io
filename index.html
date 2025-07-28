@@ -3,106 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mueez Ul Rehman – Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <title>Mueez Ul Rehman | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-      font-family: 'Poppins', sans-serif;
-    }
-    body {
-      background-color: #0f172a;
-      color: #f1f5f9;
-    }
-    header {
-      padding: 20px 40px;
-      background: #1e293b;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-    header h1 {
-      font-size: 28px;
-      color: #38bdf8;
-    }
-    nav a {
-      margin-left: 20px;
-      color: #cbd5e1;
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #121212; color: #fff; line-height: 1.6; }
+    header { background: #1f1f1f; padding: 20px; text-align: center; }
+    header h1 { font-size: 2.5rem; }
+    nav a { margin: 0 10px; color: #aaa; text-decoration: none; }
+    nav a:hover { color: #fff; }
+
+    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+    .about, .skills, .projects, .contact { margin-top: 40px; }
+
+    .btn {
+      display: inline-block;
+      background: #00bcd4;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 4px;
       text-decoration: none;
-      transition: color 0.3s;
+      margin-top: 20px;
     }
-    nav a:hover {
-      color: #38bdf8;
+
+    .skills div {
+      margin-bottom: 15px;
     }
-    section {
-      padding: 60px 40px;
+
+    .bar {
+      background: #444;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 5px;
     }
-    h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #38bdf8;
+
+    .bar span {
+      display: block;
+      height: 20px;
+      background: #00bcd4;
+      animation: grow 1.5s ease-in-out forwards;
     }
-    .projects {
+
+    @keyframes grow {
+      from { width: 0; }
+    }
+
+    .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      gap: 20px;
     }
-    .card {
-      background: #1e293b;
+
+    .project-card {
+      background: #1e1e1e;
       padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      border-radius: 8px;
+      transition: 0.3s;
     }
-    .card:hover {
-      transform: scale(1.03);
+
+    .project-card:hover {
+      background: #2c2c2c;
     }
-    .card img {
+
+    .project-card img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    .contact input, .contact textarea {
       width: 100%;
-      border-radius: 12px;
-    }
-    .card h3 {
-      margin: 15px 0 5px;
-      font-size: 20px;
-      color: #f8fafc;
-    }
-    .card p {
-      font-size: 14px;
-      color: #94a3b8;
-    }
-    form {
-      max-width: 500px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    input, textarea {
-      padding: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
       border: none;
-      border-radius: 8px;
-      background: #334155;
-      color: white;
+      border-radius: 4px;
     }
-    input::placeholder, textarea::placeholder {
-      color: #94a3b8;
-    }
-    button {
-      background: #38bdf8;
-      color: black;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #1e293b;
-      color: #94a3b8;
+      background: #1f1f1f;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -110,60 +90,71 @@
 
   <header>
     <h1>Mueez Ul Rehman</h1>
+    <p>Full-Stack Web Developer (Laravel, PHP, JavaScript)</p>
     <nav>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a 21-year-old full-stack web developer from Pakistan with 1+ year of experience building modern apps with PHP, Laravel, JavaScript, MySQL, HTML, and CSS. I also studied Java for 9 months. I'm self-taught, passionate, and always learning. My goal is to work with international teams and build meaningful software.</p>
+  <section id="about" class="about">
+    <h2>👋 About Me</h2>
+    <p>I'm a self-taught full-stack web developer from Pakistan with 1+ year experience in Laravel, PHP, HTML, CSS, JavaScript, and MySQL. Passionate about building modern, scalable web apps. I’ve also studied Java for 9 months and love working on real-world projects.</p>
+    <a href="your-cv-link.pdf" class="btn" target="_blank">📄 Download CV</a>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <img src="https://placehold.co/400x200/38bdf8/fff?text=School+Management" alt="School Project" />
-        <h3>School Management System</h3>
-        <p>Laravel-based project for managing student records, attendance, fees and reports.</p>
+  <section id="skills" class="skills">
+    <h2>🛠 Skills</h2>
+    <div>
+      <strong>PHP / Laravel</strong>
+      <div class="bar"><span style="width: 90%"></span></div>
+    </div>
+    <div>
+      <strong>JavaScript</strong>
+      <div class="bar"><span style="width: 85%"></span></div>
+    </div>
+    <div>
+      <strong>HTML / CSS</strong>
+      <div class="bar"><span style="width: 95%"></span></div>
+    </div>
+    <div>
+      <strong>MySQL</strong>
+      <div class="bar"><span style="width: 80%"></span></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>🚀 Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 1">
+        <h3>Student Attendance System</h3>
+        <p>Laravel-based real-time attendance app with Excel import/export and monthly views.</p>
       </div>
-      <div class="card">
-        <img src="https://placehold.co/400x200/38bdf8/fff?text=E-commerce" alt="E-commerce" />
-        <h3>Mini E-commerce</h3>
-        <p>A simple PHP + MySQL online shop with cart, login, and admin dashboard.</p>
-      </div>
-      <div class="card">
-        <img src="https://placehold.co/400x200/38bdf8/fff?text=Portfolio" alt="Portfolio" />
-        <h3>Developer Portfolio</h3>
-        <p>This portfolio itself – built with HTML, CSS, and pure love for clean design.</p>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/300x150" alt="Project 2">
+        <h3>Company Settings Panel</h3>
+        <p>Modern UI for updating company logo, details, and time zone in Laravel.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form onsubmit="sendEmail(); return false;">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+  <section id="contact" class="contact">
+    <h2>📬 Contact</h2>
+    <p>Let's connect! Send me a message below.</p>
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+      <button type="submit" class="btn">Send Message</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Mueez Ul Rehman — All Rights Reserved</p>
+    © 2025 Mueez Ul Rehman. Built with 💻 and ☕.
   </footer>
-
-  <!-- Optional: EmailJS Setup -->
-  <script>
-    function sendEmail() {
-      alert("This form needs EmailJS setup to work.");
-      // You can integrate with EmailJS or Formspree here later
-    }
-  </script>
 
 </body>
 </html>
