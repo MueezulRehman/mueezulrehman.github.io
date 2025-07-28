@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mueez Ul Rehman | Full-Stack Developer</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <img src="assets/avatar.png" class="avatar" alt="Avatar" />
+      <h1>Hi, I'm <span>Mueez Ul Rehman</span></h1>
+      <p class="role">I'm a Full-Stack Developer</p>
+      <p class="description">I'm a self-taught developer based in Pakistan with 1+ year of experience in PHP Laravel, JavaScript, MySQL, HTML & CSS. I build modern, functional web apps and admin panels.</p>
+      <a href="Mueez_CV.pdf" download class="btn">Download CV</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section class="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>
+      I'm a self-taught developer from Mandi Bahauddin, Pakistan. I specialize in full-stack web development and have delivered projects using Laravel, JavaScript, and MySQL. I'm always improving and ready for global remote opportunities.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <img src="assets/project1.png" alt="School Management" />
+        <h3>School Management</h3>
+      </div>
+      <div class="project">
+        <img src="assets/project2.png" alt="E-commerce" />
+        <h3>E-commerce Website</h3>
+      </div>
+      <div class="project">
+        <img src="assets/project3.png" alt="Portfolio" />
+        <h3>Portfolio Website</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skill">
+      <label>PHP: Laravel</label>
+      <progress max="100" value="90"></progress>
+    </div>
+    <div class="skill">
+      <label>JavaScript</label>
+      <progress max="100" value="85"></progress>
+    </div>
+    <div class="skill">
+      <label>HTML & CSS</label>
+      <progress max="100" value="95"></progress>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/mueezulrehman20@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
