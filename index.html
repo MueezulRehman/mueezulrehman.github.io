@@ -70,6 +70,21 @@
   .contact-row{display:flex; gap:1.5rem; flex-wrap:wrap; font-size:0.95rem;}
   .contact-row a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;}
   .contact-row a:hover{border-bottom-color:var(--accent);}
+
+  /* ---- Scroll 3D: parts fly in from left and right and meet in the centre ---- */
+  html,body{overflow-x:clip}
+  body{position:relative}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(60vmax 40vmax at 12% -5%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 60%),
+               radial-gradient(50vmax 35vmax at 100% 110%,color-mix(in srgb,var(--highlight) 12%,transparent),transparent 60%)}
+  .fly{will-change:transform,opacity;transform-origin:50% 50%;backface-visibility:hidden}
+  .stat,.project,.skill-group{border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+    background:color-mix(in srgb,var(--bg-alt) 88%,transparent);
+    box-shadow:0 18px 40px -22px rgba(0,0,0,.55);transition:border-color .25s,box-shadow .25s}
+  .project:hover,.skill-group:hover,.stat:hover{border-color:var(--accent);box-shadow:0 22px 46px -20px color-mix(in srgb,var(--accent) 45%,transparent)}
+  .project{margin-bottom:18px}
+  .project-title{font-family:var(--serif);font-size:1.15em}
+  @media (prefers-reduced-motion:reduce){.fly{transform:none!important;opacity:1!important}}
 </style>
 </head>
 <body>
@@ -177,5 +192,30 @@
   </footer>
 
 </div>
+
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els=[].slice.call(document.querySelectorAll('.stat,.project,.skill-group'));
+  els.forEach(function(el,i){el.classList.add('fly');el._dir=(i%2===0)?-1:1;});
+  var ticking=false;
+  function update(){
+    var vh=innerHeight, small=innerWidth<700;
+    var dist=small?70:170, rot=small?14:38;
+    els.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      var p=Math.min(1,Math.max(0,(vh*0.98-r.top)/(vh*0.55)));
+      var e=1-Math.pow(1-p,3), k=1-e;
+      el.style.opacity=Math.min(1,e*1.4);
+      el.style.transform='perspective(1100px) translate3d('+(el._dir*k*dist)+'px,'+(k*40)+'px,'+(-k*120)+'px) rotateY('+(-el._dir*k*rot)+'deg)';
+    });
+    ticking=false;
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll);
+  update();
+})();
+</script>
 </body>
 </html>
